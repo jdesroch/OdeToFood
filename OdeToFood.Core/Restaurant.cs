@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 
 namespace OdeToFood.Core
 {
@@ -8,5 +9,7 @@ namespace OdeToFood.Core
         public String Name { get; set; }
         public String Location { get; set; }
         public CuisineType Cuisine { get; set; }
+        public string ToJSON() => JsonSerializer.Serialize(this);
     }
+
 }

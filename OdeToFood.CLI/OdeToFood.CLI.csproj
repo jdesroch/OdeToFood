@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OdeToFood.Core\OdeToFood.Core.csproj" />
+    <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj" />
+  </ItemGroup>
+
+</Project>
