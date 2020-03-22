@@ -32,8 +32,6 @@
          asp-route-restaurantId="@restaurant.Id">
         <i class="fas fa-eye"></i>
       </a>
-    </td>
-    <td>
       <a class="btn btn-lg"
          asp-page="./Edit"
          asp-route-restaurantId="@restaurant.Id">
@@ -43,6 +41,7 @@
   </tr>
   }
 </table>
+<a asp-page=".\Edit" class="btn btn-primary">Add New</a>
 
 <div>@Model.Message</div>
 
