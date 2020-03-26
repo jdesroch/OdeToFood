@@ -1,11 +1,13 @@
 ﻿<environment include="Development">
-  <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+  <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 </environment>
 <environment exclude="Development">
   <!-- get from CDN or other source -->
   <script src="https://some-cdn/jquery.validate.min.js"
-          asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+          asp-fallback-src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"
           asp-fallback-test="window.jQuery && Window.jQuery....TODO"></script>
-  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+  <script src="https://some-cdn/jquery.validate.unobtrusive.min.js"
+          asp-fallback-src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+          asp-fallback-test="window.jQuery && Window.jQuery....TODO"></script>
 </environment>
