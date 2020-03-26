@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Primitives;
 using OdeToFood.Data;
+using OdeToFood.Middleware;
 
 namespace OdeToFood
 {
@@ -62,7 +63,7 @@ namespace OdeToFood
                 app.UseHsts();
             }
 
-            app.Use(SayHelloMiddleware);
+            app.UseSayHello();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -84,21 +85,6 @@ namespace OdeToFood
         {
             app.UseStaticFiles();
             app.UseDirectoryBrowser();
-        }
-
-        private RequestDelegate SayHelloMiddleware(RequestDelegate next)
-        {
-            return async context =>
-            {
-                if (context.Request.Path.StartsWithSegments("/hello"))
-                {
-                    await context.Response.WriteAsync("Hello, World!");
-                }
-                else
-                {
-                    await next(context);
-                }
-            };
         }
     }
 }
