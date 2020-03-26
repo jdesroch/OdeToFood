@@ -1,17 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Primitives;
 using OdeToFood.Data;
 using OdeToFood.Middleware;
 
@@ -67,6 +59,7 @@ namespace OdeToFood
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseNodeModules(maxAge: null, requestPath: "/node_modules");
             app.UseCookiePolicy();
 
             app.UseRouting();
@@ -79,7 +72,7 @@ namespace OdeToFood
                 endpoints.MapControllers();
             });
 
-            
+
         }
         private static void HandleMapBrowse(IApplicationBuilder app)
         {
